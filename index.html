@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr Dama Trades | Focus. Plan. Execute. Repeat. PROFIT.</title>
+<style>
+@import url('https://cdn.jsdelivr.net/fontsource/css/playfair-display@latest/700.css');
+@import url('https://cdn.jsdelivr.net/fontsource/css/playfair-display@latest/900.css');
+@import url('https://cdn.jsdelivr.net/fontsource/css/manrope@latest/400.css');
+@import url('https://cdn.jsdelivr.net/fontsource/css/manrope@latest/600.css');
+@import url('https://cdn.jsdelivr.net/fontsource/css/manrope@latest/800.css');
+@import url('https://cdn.jsdelivr.net/fontsource/css/great-vibes@latest/400.css');
+
+:root{
+  --bg:#050b18; --bg2:#081226; --card:#0c1830; --card2:#0f1e3c;
+  --line:rgba(217,180,91,.22); --line2:rgba(47,128,237,.25);
+  --gold:#d9b45b; --gold2:#f6e2a5; --golddeep:#9a742c;
+  --blue:#2f80ed; --blue2:#7fb4ff;
+  --text:#e9ecf5; --muted:#93a0b8;
+  --green:#22c98a; --red:#f05454;
+  --shadow:0 18px 50px rgba(0,0,0,.45);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',sans-serif; color:var(--text); background:var(--bg);
+  background-image:radial-gradient(1100px 500px at 85% -10%, rgba(47,128,237,.10), transparent 60%),
+                   radial-gradient(900px 480px at -10% 30%, rgba(217,180,91,.07), transparent 60%);
+  min-height:100vh; overflow-x:hidden;
+}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+.script{font-family:'Great Vibes',cursive}
+img{display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+input,select,textarea{font-family:inherit}
+::selection{background:rgba(217,180,91,.35)}
+
+/* ============ NAV ============ */
+header{
+  position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);
+  background:rgba(5,11,24,.82);border-bottom:1px solid var(--line);
+}
+.navwrap{max-width:1240px;margin:auto;display:flex;align-items:center;gap:1.2rem;padding:.6rem 1.2rem}
+.brand{display:flex;align-items:center;gap:.7rem;cursor:pointer}
+.brand img{width:52px;height:52px;object-fit:cover;border-radius:12px;border:1px solid var(--line);box-shadow:0 0 22px rgba(217,180,91,.25)}
+.brand .bname{line-height:1.05}
+.brand .bname b{font-family:'Playfair Display',serif;font-size:1.15rem;background:linear-gradient(135deg,#f6e2a5,#d9b45b 55%,#9a742c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand .bname span{display:block;font-family:'Great Vibes',cursive;color:var(--blue2);font-size:1rem;margin-top:2px}
+.navlinks{display:flex;gap:.2rem;margin-left:auto;align-items:center}
+.navlinks a{padding:.5rem .85rem;border-radius:9px;color:var(--muted);font-weight:600;font-size:.9rem;cursor:pointer;transition:.25s}
+.navlinks a:hover{color:var(--gold2);background:rgba(217,180,91,.08)}
+.navlinks a.active{color:var(--gold2);background:rgba(217,180,91,.12)}
+.navright{display:flex;gap:.6rem;align-items:center;margin-left:.6rem}
+#burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--gold);border-radius:9px;padding:.35rem .6rem;font-size:1.1rem}
+@media(max-width:960px){
+  #burger{display:block}
+  .navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(5,11,24,.97);flex-direction:column;padding:1rem;border-bottom:1px solid var(--line)}
+  .navlinks.open{display:flex}
+  .navright{margin-left:auto}
+}
+
+/* ============ BUTTONS / BADGES ============ */
+.btn{border:none;border-radius:11px;padding:.68rem 1.3rem;font-weight:800;font-size:.9rem;letter-spacing:.02em;transition:.25s;display:inline-flex;align-items:center;gap:.45rem}
+.btn-gold{background:linear-gradient(135deg,#f6e2a5,#d9b45b 45%,#a8802a);color:#1a1200;box-shadow:0 8px 24px rgba(217,180,91,.28)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(217,180,91,.4)}
+.btn-blue{background:linear-gradient(135deg,#4d9bff,#2f80ed 55%,#1c56b0);color:#fff;box-shadow:0 8px 24px rgba(47,128,237,.3)}
+.btn-blue:hover{transform:translateY(-2px)}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--gold2)}
+.btn-ghost:hover{background:rgba(217,180,91,.1)}
+.btn-sm{padding:.42rem .85rem;font-size:.8rem;border-radius:9px}
+.btn-danger{background:rgba(240,84,84,.14);color:var(--red);border:1px solid rgba(240,84,84,.4)}
+.badge{display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;padding:.22rem .7rem;font-size:.72rem;font-weight:800;letter-spacing:.04em}
+.badge.up{background:rgba(34,201,138,.14);color:var(--green);border:1px solid rgba(34,201,138,.4)}
+.badge.down{background:rgba(240,84,84,.14);color:var(--red);border:1px solid rgba(240,84,84,.4)}
+.badge.flat{background:rgba(47,128,237,.14);color:var(--blue2);border:1px solid rgba(47,128,237,.4)}
+.badge.gold{background:rgba(217,180,91,.14);color:var(--gold2);border:1px solid var(--line)}
+.goldtext{background:linear-gradient(135deg,#f6e2a5,#d9b45b 50%,#9a742c);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ============ TICKER ============ */
+.ticker{overflow:hidden;background:#071022;border-bottom:1px solid var(--line)}
+.ticker-track{display:flex;width:max-content;animation:tickmove 45s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.tgroup{display:flex;align-items:center;gap:2.6rem;padding:.55rem 1.3rem;white-space:nowrap}
+.titem{display:inline-flex;gap:.55rem;align-items:center;font-size:.8rem;font-weight:700}
+.titem .tn{color:var(--muted)}
+.titem .tp{color:var(--gold2)}
+@keyframes tickmove{to{transform:translateX(-50%)}}
+
+/* ============ VIEWS / LAYOUT ============ */
+main{max-width:1240px;margin:auto;padding:0 1.2rem}
+.view{display:none}
+.view.active{display:block;animation:fadeUp .5s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin:2.6rem 0 1.4rem;flex-wrap:wrap}
+.section-head h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:900}
+.section-head .script{color:var(--blue2);font-size:1.5rem;display:block;margin-bottom:.2rem}
+.section-head p{color:var(--muted);max-width:560px;font-size:.95rem}
+.card{background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+
+/* ============ HERO ============ */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center;padding:3.4rem 0 2.4rem}
+@media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center}}
+.hero .kicker{color:var(--blue2);font-size:1.7rem;margin-bottom:.4rem}
+.hero h1{font-size:clamp(2.3rem,5.4vw,3.9rem);font-weight:900;line-height:1.08}
+.hero p.lead{color:var(--muted);margin:1.1rem 0 1.6rem;font-size:1.02rem;max-width:560px}
+@media(max-width:900px){.hero p.lead{margin-inline:auto}}
+.hero .ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+@media(max-width:900px){.hero .ctas{justify-content:center}}
+.tagline{margin-top:1.5rem;font-weight:800;letter-spacing:.14em;font-size:.8rem;color:var(--gold)}
+.tagline em{color:var(--blue2);font-style:normal}
+.herologo{position:relative;display:flex;justify-content:center}
+.herologo img{width:min(430px,88%);border-radius:26px;border:1px solid var(--line);box-shadow:0 0 70px rgba(217,180,91,.22),0 30px 60px rgba(0,0,0,.5);animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.statsrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1.4rem 0 1rem}
+@media(max-width:800px){.statsrow{grid-template-columns:repeat(2,1fr)}}
+.stat{padding:1.1rem 1rem;text-align:center}
+.stat b{font-family:'Playfair Display',serif;font-size:1.5rem;display:block}
+.stat span{color:var(--muted);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+
+/* ============ SERVICES ============ */
+.svcgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+@media(max-width:1000px){.svcgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.svcgrid{grid-template-columns:1fr}}
+.svc{padding:1.5rem 1.3rem;position:relative;overflow:hidden;transition:.3s}
+.svc:hover{transform:translateY(-5px);border-color:rgba(217,180,91,.5)}
+.svc .ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;background:rgba(217,180,91,.12);border:1px solid var(--line);margin-bottom:1rem}
+.svc h3{font-size:1.15rem;margin-bottom:.5rem}
+.svc p{color:var(--muted);font-size:.88rem;line-height:1.65}
+.svc::after{content:"";position:absolute;inset:auto -40px -60px auto;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(47,128,237,.16),transparent 70%)}
+
+/* ============ MARKETS ============ */
+.aipanel{display:grid;grid-template-columns:auto 1fr auto;gap:1.6rem;align-items:center;padding:1.4rem 1.6rem;margin-bottom:1.4rem}
+@media(max-width:800px){.aipanel{grid-template-columns:1fr;text-align:center}}
+.aibadge{font-size:1.25rem;font-weight:900;padding:.7rem 1.6rem;border-radius:14px;letter-spacing:.06em}
+.aibadge.BULLISH{background:rgba(34,201,138,.15);color:var(--green);border:1px solid rgba(34,201,138,.5);box-shadow:0 0 30px rgba(34,201,138,.2)}
+.aibadge.BEARISH{background:rgba(240,84,84,.15);color:var(--red);border:1px solid rgba(240,84,84,.5);box-shadow:0 0 30px rgba(240,84,84,.2)}
+.aibadge.NEUTRAL{background:rgba(47,128,237,.15);color:var(--blue2);border:1px solid rgba(47,128,237,.5)}
+.aibadge .pulse{display:inline-block;width:9px;height:9px;border-radius:50%;background:currentColor;margin-right:.5rem;animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
+.aiinfo h3{font-size:1.1rem;margin-bottom:.3rem}
+.aiinfo p{color:var(--muted);font-size:.86rem}
+.aiconf{min-width:220px}
+@media(max-width:800px){.aiconf{margin:auto}}
+.aiconf small{color:var(--muted);font-weight:700;font-size:.72rem;letter-spacing:.08em}
+.confbar{height:8px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:.4rem}
+.confbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .8s ease}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.1rem}
+.mcard{padding:1.15rem 1.15rem 1rem;transition:.3s}
+.mcard:hover{transform:translateY(-4px);border-color:rgba(217,180,91,.45)}
+.mhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:.55rem}
+.mhead b{font-size:.92rem;letter-spacing:.03em}
+.mprice{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;color:var(--gold2)}
+.mrow{display:flex;justify-content:space-between;align-items:center;margin:.5rem 0 .6rem;gap:.5rem}
+canvas.spark{width:100%;height:46px}
+.msent{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:.6rem}
+.msent .confbar{flex:1;margin-top:0}
+.msent small{font-size:.7rem;color:var(--muted);font-weight:800;white-space:nowrap}
+.feednote{color:var(--muted);font-size:.78rem;margin-top:1rem}
+
+/* ============ COURSES ============ */
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+@media(max-width:980px){.cgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.cgrid{grid-template-columns:1fr}}
+.ccard{overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+.ccard:hover{transform:translateY(-5px);border-color:rgba(217,180,91,.5)}
+.cband{height:96px;position:relative;background:
+  radial-gradient(300px 120px at 20% 0%,rgba(47,128,237,.35),transparent 70%),
+  linear-gradient(135deg,#132548,#0a1428);
+  display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
+.cband .mono{font-family:'Playfair Display',serif;font-weight:900;font-size:2.2rem}
+.cbody{padding:1.2rem;display:flex;flex-direction:column;gap:.7rem;flex:1}
+.cbody h3{font-size:1.18rem}
+.cbody p{color:var(--muted);font-size:.86rem;line-height:1.6;flex:1}
+.cmeta{display:flex;gap:.5rem;flex-wrap:wrap}
+.cfoot{display:flex;gap:.6rem;margin-top:.3rem}
+.cfoot .btn{flex:1;justify-content:center}
+
+/* ============ LEADERBOARD ============ */
+.lbwrap{overflow-x:auto}
+table.lb{width:100%;border-collapse:collapse;min-width:640px}
+.lb th{font-size:.72rem;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;text-align:left;padding:.9rem 1.2rem;border-bottom:1px solid var(--line)}
+.lb td{padding:.95rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.05);font-size:.92rem;font-weight:600}
+.lb tr:last-child td{border-bottom:none}
+.lb tr:hover td{background:rgba(217,180,91,.05)}
+.rank{width:34px;height:34px;border-radius:10px;display:inline-grid;place-items:center;font-weight:900;font-size:.85rem}
+.r1{background:linear-gradient(135deg,#f6e2a5,#c89b3c);color:#241a00}
+.r2{background:linear-gradient(135deg,#e8ecf5,#9aa7bd);color:#141a26}
+.r3{background:linear-gradient(135deg,#e0a878,#9c6238);color:#2a1500}
+.rn{background:rgba(255,255,255,.07);color:var(--muted)}
+.growth{color:var(--green);font-weight:800}
+
+/* ============ COMMUNITY ============ */
+.composer{padding:1.2rem;margin-bottom:1.3rem}
+.composer textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;color:var(--text);padding:.9rem;min-height:86px;resize:vertical;font-size:.92rem;outline:none}
+.composer textarea:focus{border-color:var(--gold)}
+.composer .crow{display:flex;justify-content:space-between;align-items:center;margin-top:.8rem;gap:.8rem;flex-wrap:wrap}
+.post{padding:1.2rem;margin-bottom:1rem}
+.phead{display:flex;align-items:center;gap:.8rem;margin-bottom:.7rem}
+.avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-family:'Playfair Display',serif;background:linear-gradient(135deg,#d9b45b,#8a6a26);color:#1a1200;font-size:1.05rem}
+.avatar.blue{background:linear-gradient(135deg,#4d9bff,#1c56b0);color:#fff}
+.phead .pmeta b{display:block;font-size:.95rem}
+.phead .pmeta span{color:var(--muted);font-size:.75rem}
+.post p{color:#cfd6e4;font-size:.93rem;line-height:1.7}
+.pfoot{margin-top:.8rem;display:flex;gap:.8rem;align-items:center}
+.likebtn{background:rgba(217,180,91,.1);border:1px solid var(--line);color:var(--gold2);border-radius:99px;padding:.32rem .85rem;font-size:.8rem;font-weight:800;transition:.2s}
+.likebtn:hover,.likebtn.liked{background:rgba(217,180,91,.25)}
+
+/* ============ DASHBOARD / ADMIN ============ */
+.dashgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:1.2rem}
+@media(max-width:900px){.dashgrid{grid-template-columns:1fr}}
+.dcard{padding:1.4rem}
+.dcard h3{font-size:1.15rem;margin-bottom:.9rem;display:flex;align-items:center;gap:.5rem}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:560px){.formgrid{grid-template-columns:1fr}}
+.field label{display:block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.field input,.field select,.field textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:10px;color:var(--text);padding:.65rem .8rem;font-size:.9rem;outline:none;transition:.2s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+.field select option{background:#0c1830}
+.field .full{grid-column:1/-1}
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.4rem 0}
+.tabs button{background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--muted);border-radius:99px;padding:.5rem 1.1rem;font-weight:800;font-size:.82rem;transition:.2s}
+.tabs button.on{background:linear-gradient(135deg,#f6e2a5,#d9b45b);color:#1a1200;border-color:transparent}
+.adminbox{padding:1.6rem}
+.statcards{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media(max-width:900px){.statcards{grid-template-columns:repeat(2,1fr)}}
+.scard{padding:1.1rem;text-align:center}
+.scard b{font-family:'Playfair Display',serif;font-size:1.7rem;display:block}
+.scard span{color:var(--muted);font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.listrow{display:flex;justify-content:space-between;align-items:center;gap:.8rem;padding:.75rem .4rem;border-bottom:1px solid rgba(255,255,255,.06);font-size:.9rem;flex-wrap:wrap}
+.listrow:last-child{border-bottom:none}
+.status{border-radius:99px;padding:.2rem .7rem;font-size:.7rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+.st-pending{background:rgba(217,180,91,.15);color:var(--gold2);border:1px solid var(--line)}
+.st-managing{background:rgba(34,201,138,.15);color:var(--green);border:1px solid rgba(34,201,138,.4)}
+.st-rejected{background:rgba(240,84,84,.15);color:var(--red);border:1px solid rgba(240,84,84,.4)}
+
+/* ============ MODALS / TOAST / FOOTER ============ */
+.modal{position:fixed;inset:0;background:rgba(2,6,14,.78);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:100;padding:1rem}
+.modal.open{display:flex}
+.mbox{width:min(560px,94vw);max-height:88vh;overflow-y:auto;background:linear-gradient(165deg,#10203f,#0a1428);border:1px solid var(--line);border-radius:20px;padding:1.8rem;position:relative;animation:fadeUp .35s ease}
+.mbox.wide{width:min(720px,94vw)}
+.mclose{position:absolute;top:.9rem;right:.9rem;background:rgba(255,255,255,.07);border:1px solid var(--line);color:var(--muted);width:34px;height:34px;border-radius:10px;font-size:1rem}
+.mclose:hover{color:var(--red)}
+.authtabs{display:flex;gap:.6rem;margin:1rem 0 1.2rem}
+.authtabs button{flex:1;border-radius:10px;padding:.6rem;font-weight:800;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--line)}
+.authtabs button.on{background:linear-gradient(135deg,#f6e2a5,#d9b45b);color:#1a1200;border-color:transparent}
+.hintbox{margin-top:1rem;background:rgba(47,128,237,.1);border:1px dashed var(--line2);border-radius:10px;padding:.7rem .9rem;font-size:.78rem;color:var(--blue2)}
+.lesson{border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem;margin-bottom:.7rem;background:rgba(255,255,255,.03)}
+.lesson .ltop{display:flex;justify-content:space-between;gap:.6rem;align-items:center}
+.lesson b{font-size:.95rem}
+.lesson p{color:var(--muted);font-size:.84rem;margin-top:.4rem;line-height:1.6}
+#toast{position:fixed;bottom:1.4rem;left:50%;transform:translateX(-50%) translateY(80px);background:linear-gradient(135deg,#f6e2a5,#d9b45b);color:#1a1200;font-weight:800;padding:.8rem 1.5rem;border-radius:99px;box-shadow:0 14px 40px rgba(0,0,0,.5);transition:.4s ease;z-index:200;opacity:0;font-size:.9rem}
+#toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+footer{margin-top:4rem;border-top:1px solid var(--line);background:#040914}
+.fwrap{max-width:1240px;margin:auto;padding:2.6rem 1.2rem 1.6rem;display:grid;grid-template-columns:1.2fr .8fr 1fr;gap:2rem}
+@media(max-width:860px){.fwrap{grid-template-columns:1fr}}
+.fwrap h4{font-size:1rem;margin-bottom:.8rem}
+.fwrap p,.fwrap a{color:var(--muted);font-size:.85rem;line-height:1.8}
+.fwrap a{display:block;cursor:pointer}
+.fwrap a:hover{color:var(--gold2)}
+.fbrand img{width:74px;border-radius:14px;border:1px solid var(--line);margin-bottom:.9rem}
+.fbottom{border-top:1px solid rgba(255,255,255,.05);padding:1rem;text-align:center;color:var(--muted);font-size:.75rem}
+.ctaband{margin:3rem 0 1rem;padding:2.4rem 2rem;text-align:center;background:
+  radial-gradient(600px 200px at 50% -50%,rgba(217,180,91,.2),transparent 70%),linear-gradient(160deg,#122448,#0a1428);
+  border:1px solid var(--line);border-radius:22px}
+.ctaband h2{font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:900;margin-bottom:.5rem}
+.ctaband .script{color:var(--blue2);font-size:1.6rem}
+.ctaband p{color:var(--muted);margin:.7rem auto 1.4rem;max-width:520px}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="navwrap">
+    <div class="brand" onclick="showView('home')">
+      <img src="https://image.qwenlm.ai/public_source/3f942f45-4bac-4fd2-999a-85c02cdb25c8/1990b797b-61e7-4dc8-b83b-1df13cb55872.png" alt="Dr Dama Trades Logo">
+      <div class="bname"><b>Dr Dama Trades</b><span>Focus · Plan · Execute</span></div>
+    </div>
+    <button id="burger" onclick="toggleMenu()">☰</button>
+    <nav class="navlinks" id="navLinks">
+      <a data-view="home" class="active">Home</a>
+      <a data-view="markets">Live Markets</a>
+      <a data-view="courses">Courses</a>
+      <a data-view="leaderboard">Leaderboard</a>
+      <a data-view="community">Community</a>
+      <a data-view="dashboard" id="navDash" style="display:none">My Dashboard</a>
+      <a data-view="admin" id="navAdmin" style="display:none">Admin Panel</a>
+    </nav>
+    <div class="navright" id="navRight"></div>
+  </div>
+</header>
+
+<!-- ================= TICKER ================= -->
+<div class="ticker"><div class="ticker-track">
+  <div class="tgroup" id="tGroupA"></div>
+  <div class="tgroup" id="tGroupB"></div>
+</div></div>
+
+<main>
+<!-- ================= HOME ================= -->
+<section class="view active" id="view-home">
+  <div class="hero">
+    <div>
+      <div class="kicker script">Welcome to the family</div>
+      <h1 class="goldtext">Trade With Structure.<br>Profit With Discipline.</h1>
+      <p class="lead">Dr Dama Trades is a premium forex community offering professional <b style="color:var(--gold2)">MT5 account management</b>, structured forex classes and an AI-powered market desk — built for traders who take this business seriously.</p>
+      <div class="ctas">
+        <button class="btn btn-gold" onclick="openAuth('signup')">🚀 Join The Community</button>
+        <button class="btn btn-blue" onclick="showView('courses')">🎓 Start Learning</button>
+        <button class="btn btn-ghost" onclick="showView('markets')">📈 Live Markets</button>
+      </div>
+      <div class="tagline">FOCUS. PLAN. EXECUTE. REPEAT. <em>PROFIT.</em></div>
+    </div>
+    <div class="herologo">
+      <img src="https://image.qwenlm.ai/public_source/3f942f45-4bac-4fd2-999a-85c02cdb25c8/1990b797b-61e7-4dc8-b83b-1df13cb55872.png" alt="Dr Dama Trades">
+    </div>
+  </div>
+
+  <div class="statsrow">
+    <div class="card stat"><b class="goldtext">4,800+</b><span>Community Members</span></div>
+    <div class="card stat"><b class="goldtext">320+</b><span>Managed MT5 Accounts</span></div>
+    <div class="card stat"><b class="goldtext">87%</b><span>Student Success Rate</span></div>
+    <div class="card stat"><b class="goldtext">24/7</b><span>AI Market Sentinel</span></div>
+  </div>
+
+  <div class="section-head">
+    <div><span class="script">What we offer</span><h2 class="goldtext">Built For Serious Traders</h2></div>
+  </div>
+  <div class="svcgrid">
+    <div class="card svc"><div class="ico">💼</div><h3>Account Management</h3><p>Drop your MT5 credentials securely and let Dr Dama's desk trade your account with strict drawdown controls, weekly reports and transparent profit splits.</p></div>
+    <div class="card svc"><div class="ico">🎓</div><h3>Forex Education</h3><p>Structured class lessons from candlestick foundations to gold &amp; indices mastery — new lessons added straight from the admin desk.</p></div>
+    <div class="card svc"><div class="ico">🏆</div><h3>Trader Leaderboard</h3><p>A living community where the best performing traders are ranked monthly. Climb the board, earn recognition, get funded.</p></div>
+    <div class="card svc"><div class="ico">🤖</div><h3>AI Market Sentinel</h3><p>Our AI engine reads live price action across forex, gold, indices and crypto and tells you instantly: <b style="color:var(--green)">BULLISH</b> or <b style="color:var(--red)">BEARISH</b>.</p></div>
+  </div>
+
+  <div class="ctaband card">
+    <span class="script">Your journey starts today</span>
+    <h2 class="goldtext">Ready To Trade Like A Professional?</h2>
+    <p>Sign up free, learn the craft, join the community — or hand your MT5 account to the desk and let structure do the work.</p>
+    <button class="btn btn-gold" onclick="openAuth('signup')">Create Free Account</button>
+  </div>
+</section>
+
+<!-- ================= MARKETS ================= -->
+<section class="view" id="view-markets">
+  <div class="section-head">
+    <div><span class="script">Real-time desk</span><h2 class="goldtext">Live Markets &amp; AI Sentiment</h2></div>
+    <p>Streaming prices across forex, gold, indices and crypto — with the Dama AI Sentinel verdict on every instrument.</p>
+  </div>
+  <div class="card aipanel">
+    <div class="aibadge NEUTRAL" id="aiBig"><span class="pulse"></span>SCANNING…</div>
+    <div class="aiinfo">
+      <h3 class="goldtext">Dama AI Sentinel — Overall Market Mood</h3>
+      <p id="aiSummary">Analysing momentum across all tracked instruments…</p>
+    </div>
+    <div class="aiconf">
+      <small>MODEL CONFIDENCE</small>
+      <div class="confbar"><i id="aiConfBar" style="width:50%"></i></div>
+      <small id="aiConfTxt" style="display:block;margin-top:.35rem">50%</small>
+    </div>
+  </div>
+  <div class="mgrid" id="marketGrid"></div>
+  <p class="feednote">⚡ Prices stream live (anchored to public market feeds including PAXG spot for Gold) and power the AI momentum model. Educational use only — not financial advice.</p>
+</section>
+
+<!-- ================= COURSES ================= -->
+<section class="view" id="view-courses">
+  <div class="section-head">
+    <div><span class="script">The academy</span><h2 class="goldtext">Forex Class Lessons</h2></div>
+    <p>Enrol in a course to unlock its lessons. New classes are published regularly by Dr Dama from the admin desk.</p>
+  </div>
+  <div class="cgrid" id="courseGrid"></div>
+</section>
+
+<!-- ================= LEADERBOARD ================= -->
+<section class="view" id="view-leaderboard">
+  <div class="section-head">
+    <div><span class="script">Hall of fame</span><h2 class="goldtext">Best Performing Traders</h2></div>
+    <p>Monthly community leaderboard — ranked by account growth. Consistency is the only currency here.</p>
+  </div>
+  <div class="card lbwrap">
+    <table class="lb">
+      <thead><tr><th>Rank</th><th>Trader</th><th>Focus</th><th>Win Streak</th><th style="text-align:right">Growth (Month)</th></tr></thead>
+      <tbody id="lbBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= COMMUNITY ================= -->
+<section class="view" id="view-community">
+  <div class="section-head">
+    <div><span class="script">The family room</span><h2 class="goldtext">Trader Community</h2></div>
+    <p>Share setups, wins, lessons and questions with thousands of traders walking the same path.</p>
+  </div>
+  <div id="composerBox"></div>
+  <div id="postFeed"></div>
+</section>
+
+<!-- ================= DASHBOARD ================= -->
+<section class="view" id="view-dashboard">
+  <div class="section-head">
+    <div><span class="script">Client area</span><h2 class="goldtext" id="dashTitle">My Dashboard</h2></div>
+  </div>
+  <div class="dashgrid" id="dashBody"></div>
+</section>
+
+<!-- ================= ADMIN ================= -->
+<section class="view" id="view-admin">
+  <div class="section-head">
+    <div><span class="script">Command centre</span><h2 class="goldtext">Admin Panel</h2></div>
+  </div>
+  <div class="tabs" id="adminTabs">
+    <button class="on" onclick="renderAdmin('overview')">📊 Overview</button>
+    <button onclick="renderAdmin('courses')">📚 Add Course</button>
+    <button onclick="renderAdmin('lessons')">🎬 Add Lesson</button>
+    <button onclick="renderAdmin('accounts')">💼 MT5 Accounts</button>
+    <button onclick="renderAdmin('traders')">🏆 Leaderboard</button>
+    <button onclick="renderAdmin('moderation')">🛡️ Moderation</button>
+  </div>
+  <div class="card adminbox" id="adminBody"></div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="fwrap">
+    <div class="fbrand">
+      <img src="https://image.qwenlm.ai/public_source/3f942f45-4bac-4fd2-999a-85c02cdb25c8/1990b797b-61e7-4dc8-b83b-1df13cb55872.png" alt="Dr Dama Trades">
+      <p><b class="goldtext">Dr Dama Trades</b> — professional forex account management, education and community. <span style="color:var(--blue2)">Focus. Plan. Execute. Repeat. Profit.</span></p>
+    </div>
+    <div>
+      <h4 class="goldtext">Explore</h4>
+      <a onclick="showView('markets')">Live Markets &amp; AI</a>
+      <a onclick="showView('courses')">Course Academy</a>
+      <a onclick="showView('leaderboard')">Leaderboard</a>
+      <a onclick="showView('community')">Community Feed</a>
+      <a onclick="openAuth('signup')">Become A Member</a>
+    </div>
+    <div>
+      <h4 class="goldtext">Risk Warning</h4>
+      <p>Trading foreign exchange, gold and indices carries a high level of risk and may not be suitable for all investors. Past performance is not indicative of future results. Trade responsibly.</p>
+    </div>
+  </div>
+  <div class="fbottom">© 2026 Dr Dama Trades · All Rights Reserved · Built with discipline.</div>
+</footer>
+
+<!-- ================= AUTH MODAL ================= -->
+<div class="modal" id="authModal">
+  <div class="mbox">
+    <button class="mclose" onclick="closeModal('authModal')">✕</button>
+    <div style="text-align:center"><span class="script" style="color:var(--blue2);font-size:1.6rem">Join the family</span>
+    <h2 class="goldtext" style="font-size:1.6rem">Dr Dama Trades</h2></div>
+    <div class="authtabs">
+      <button id="tabLogin" class="on" onclick="switchAuth('login')">Sign In</button>
+      <button id="tabSignup" onclick="switchAuth('signup')">Create Account</button>
+    </div>
+    <form id="loginForm" onsubmit="loginSubmit(event)">
+      <div class="formgrid">
+        <div class="field" style="grid-column:1/-1"><label>Email</label><input type="email" id="liEmail" required placeholder="you@email.com"></div>
+        <div class="field" style="grid-column:1/-1"><label>Password</label><input type="password" id="liPass" required placeholder="••••••••"></div>
+      </div>
+      <button class="btn btn-gold" style="width:100%;justify-content:center;margin-top:1rem">Sign In →</button>
+    </form>
+    <form id="signupForm" style="display:none" onsubmit="signupSubmit(event)">
+      <div class="formgrid">
+        <div class="field" style="grid-column:1/-1"><label>Full Name</label><input type="text" id="suName" required placeholder="e.g. Naledi Mokoena"></div>
+        <div class="field"><label>Email</label><input type="email" id="suEmail" required placeholder="you@email.com"></div>
+        <div class="field"><label>Password</label><input type="password" id="suPass" required minlength="6" placeholder="min 6 characters"></div>
+      </div>
+      <button class="btn btn-gold" style="width:100%;justify-content:center;margin-top:1rem">🚀 Create My Account</button>
+    </form>
+    <div class="hintbox">🔑 <b>Demo access</b> — Admin: <b>admin@drdama.com / admin123</b> · Client: <b>client@demo.com / demo123</b></div>
+  </div>
+</div>
+
+<!-- ================= COURSE MODAL ================= -->
+<div class="modal" id="courseModal">
+  <div class="mbox wide">
+    <button class="mclose" onclick="closeModal('courseModal')">✕</button>
+    <div id="courseModalBody"></div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+'use strict';
+/* ---------- helpers ---------- */
+var $ = function(s){ return document.querySelector(s); };
+var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function avg(a){ return a.reduce(function(x,y){ return x+y; },0)/a.length; }
+function fmt(n,d){ return n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}); }
+function timeAgo(ts){ var s=Math.floor((Date.now()-ts)/1000); if(s<60)return 'just now'; if(s<3600)return Math.floor(s/60)+'m ago'; if(s<86400)return Math.floor(s/3600)+'h ago'; return Math.floor(s/86400)+'d ago'; }
+var DB = {
+  get:function(k,d){ try{ var v=JSON.parse(localStorage.getItem(k)); return v==null?d:v; }catch(e){ return d; } },
+  set:function(k,v){ localStorage.setItem(k, JSON.stringify(v)); }
+};
+function toast(msg){ var t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(function(){ t.classList.remove('show'); },2600); }
+
+/* ---------- seed data ---------- */
+if(!DB.get('dt_seed_v1', false)){
+  DB.set('dt_users',[{id:'u1',name:'Demo Client',email:'client@demo.com',pass:'demo123',role:'client',joined:Date.now()-86400000*12}]);
+  DB.set('dt_courses',[
+    {id:'c1',title:'Forex Foundations Bootcamp',cat:'Beginner',level:'Level 1',desc:'The exact structured path every new student walks — market mechanics, candlesticks, structure and the risk rules that keep you alive.',lessons:[
+      {title:'Candlesticks & Market Structure 101',dur:'48 min',content:'How candles are built, who is really buying and selling, and how to read swing highs/lows like a map.'},
+      {title:'Support, Resistance & Liquidity Zones',dur:'52 min',content:'Marking institutional levels, spotting liquidity pools and waiting for price to come to your zone.'},
+      {title:'Risk Management — The Dama Rulebook',dur:'61 min',content:'Position sizing, max daily loss, risk-per-trade and the psychology of thinking in probabilities.'}]},
+    {id:'c2',title:'Gold & Indices Mastery',cat:'Intermediate',level:'Level 2',desc:'XAUUSD, US30 and NAS100 session behaviour — the volatility playbooks Dr Dama uses on the funded desk.',lessons:[
+      {title:'XAUUSD: London & New York Session Playbooks',dur:'57 min',content:'Gold’s daily rhythm, key kill-zones, spread behaviour and the levels that matter each session.'},
+      {title:'US30 Scalping: Opening Range Execution',dur:'44 min',content:'A complete scalping framework for the Dow open with entries, stops and partials explained live.'}]},
+    {id:'c3',title:'Professional Account Management',cat:'Advanced',level:'Level 3',desc:'How the managed-account desk operates: drawdown control, compounding schedules and investor reporting.',lessons:[
+      {title:'Drawdown Control & Portfolio Curves',dur:'50 min',content:'Engineering equity curves: risk caps, correlation limits and when to stand completely aside.'}]}
+  ]);
+  DB.set('dt_lb',[
+    {id:'t1',name:'Dr. Dama',focus:'XAUUSD · US30',streak:'21 wks',growth:34.8},
+    {id:'t2',name:'Thabo M.',focus:'EURUSD',streak:'9 wks',growth:22.4},
+    {id:'t3',name:'Lerato K.',focus:'XAUUSD',streak:'7 wks',growth:19.1},
+    {id:'t4',name:'Michael O.',focus:'NAS100',streak:'6 wks',growth:15.6},
+    {id:'t5',name:'Anna P.',focus:'GBPUSD',streak:'5 wks',growth:12.9},
+    {id:'t6',name:'Sipho D.',focus:'US30',streak:'4 wks',growth:10.2},
+    {id:'t7',name:'Zanele N.',focus:'XAUUSD',streak:'3 wks',growth:8.7},
+    {id:'t8',name:'Kagiso T.',focus:'EURUSD',streak:'2 wks',growth:6.3}
+  ]);
+  DB.set('dt_posts',[
+    {id:'p1',author:'Dr. Dama',role:'mentor',time:Date.now()-3600000*2,text:'Gold respected the London low again today. Patience paid — we waited 3 hours for price to arrive, took one A+ setup and closed the laptop. That is the entire business. Focus. Plan. Execute. Repeat. 💛',likes:48,likedBy:[]},
+    {id:'p2',author:'Thabo M.',role:'member',time:Date.now()-3600000*7,text:'Passed my funded challenge today using ONLY the risk rulebook from Level 1 🙏 Two weeks of breakeven days kept me alive until the A+ setups came. Thank you Dr Dama!',likes:31,likedBy:[]},
+    {id:'p3',author:'Lerato K.',role:'member',time:Date.now()-3600000*26,text:'AI Sentinel called the NAS100 bearish flip before the NY open today… watched it play out to the tick. This community is unfair 😅📉',likes:19,likedBy:[]}
+  ]);
+  DB.set('dt_mt5',[{id:'m1',email:'client@demo.com',name:'Demo Client',login:'50238811',server:'ICMarkets-Live08',mode:'Growth (Compounding)',risk:'Balanced',status:'pending',date:Date.now()-86400000*2}]);
+  DB.set('dt_enroll',{});
+  DB.set('dt_seed_v1',true);
+}
+var session = DB.get('dt_session', null);
+var ADMIN = {email:'admin@drdama.com', pass:'admin123'};
+
+/* ---------- market engine with Gold Live Integration ---------- */
+var SYMBOLS = [
+  {id:'EURUSD', name:'EUR/USD', base:1.0842, dec:5, vol:0.00035, live:'EURUSDT'},
+  {id:'GBPUSD', name:'GBP/USD', base:1.2716, dec:5, vol:0.00035, live:'GBPUSDT'},
+  {id:'USDJPY', name:'USD/JPY', base:151.42, dec:3, vol:0.00035},
+  {id:'XAUUSD', name:'GOLD · XAU/USD', base:2684.50, dec:2, vol:0.0006, live:'PAXGUSDT'}, // Mapped to live PAXG/USDT (Tokenized Gold)
+  {id:'BTCUSD', name:'BTC/USD', base:117250, dec:2, vol:0.0011, live:'BTCUSDT'},
+  {id:'ETHUSD', name:'ETH/USD', base:4285.4, dec:2, vol:0.0012, live:'ETHUSDT'},
+  {id:'US30', name:'US30 · Dow', base:44126, dec:0, vol:0.0005},
+  {id:'NAS100', name:'NAS100', base:19854.5, dec:1, vol:0.0006}
+];
+SYMBOLS.forEach(function(s){ s.price=s.base; s.open=s.base; s.history=[s.base]; s.bias=(Math.random()-.5)*s.vol*1.4; });
+
+function tickSim(){
+  SYMBOLS.forEach(function(s){
+    // If symbol has a live binding, tick simulation only adds slight fluctuation if live is pending, but live feed updates overwrite it completely.
+    var shock=(Math.random()-.5)*2*s.vol;
+    if(Math.random()<0.03){ s.bias=(Math.random()-.5)*2*s.vol; }
+    s.price = s.price*(1+s.bias+shock);
+    s.history.push(s.price); if(s.history.length>60)s.history.shift();
+  });
+  updateMarketUI(); updateTicker();
+}
+
+function fetchLive(){
+  var mapped = SYMBOLS.filter(function(s){ return s.live; });
+  if(!mapped.length) return;
+  try{
+    var syms = JSON.stringify(mapped.map(function(s){ return s.live; }));
+    fetch('https://api.binance.com/api/v3/ticker/24hr?symbols='+encodeURIComponent(syms))
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(data){
+        data.forEach(function(d){
+          var s = SYMBOLS.find(function(x){ return x.live===d.symbol; });
+          if(s){
+            var p=parseFloat(d.lastPrice); var pct=parseFloat(d.priceChangePercent)||0;
+            s.price=p; s.open=p/(1+pct/100); s.history.push(p); if(s.history.length>60)s.history.shift();
+          }
+        });
+        updateMarketUI(); updateTicker();
+      }).catch(function(){});
+  }catch(e){}
+}
+
+function sentimentOf(s){
+  var h=s.history, n=h.length;
+  if(n<4) return {dir:'NEUTRAL',conf:50,score:0};
+  var shortA=avg(h.slice(-Math.min(5,n))), longA=avg(h.slice(-Math.min(18,n)));
+  var score=(shortA-longA)/longA*100;
+  var dir = score>0.004?'BULLISH':(score<-0.004?'BEARISH':'NEUTRAL');
+  var conf = Math.min(97, Math.round(52+Math.abs(score)*2600));
+  return {dir:dir,conf:conf,score:score};
+}
+function drawSpark(cv,hist,up){
+  var ctx=cv.getContext('2d'), w=cv.width, h=cv.height;
+  ctx.clearRect(0,0,w,h); if(hist.length<2)return;
+  var mn=Math.min.apply(null,hist), mx=Math.max.apply(null,hist), rg=(mx-mn)||1;
+  ctx.beginPath();
+  hist.forEach(function(p,i){
+    var x=i/(hist.length-1)*(w-4)+2, y=h-3-((p-mn)/rg)*(h-6);
+    if(i===0)ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  });
+  ctx.strokeStyle= up?'#22c98a':'#f05454'; ctx.lineWidth=2; ctx.stroke();
+  ctx.lineTo(w-2,h-1); ctx.lineTo(2,h-1); ctx.closePath();
+  ctx.fillStyle= up?'rgba(34,201,138,.12)':'rgba(240,84,84,.12)'; ctx.fill();
+}
+function buildMarketCards(){
+  $('#marketGrid').innerHTML = SYMBOLS.map(function(s){
+    return '<div class="card mcard">'+
+      '<div class="mhead"><b>'+s.name+'</b><span class="badge gold" id="mk-type-'+s.id+'">'+(s.id==='XAUUSD'?'LIVE GOLD':(s.live?'LIVE':'CFD'))+'</span></div>'+
+      '<div class="mprice" id="mk-price-'+s.id+'">—</div>'+
+      '<div class="mrow"><span class="badge up" id="mk-chg-'+s.id+'">0.00%</span><small style="color:var(--muted);font-weight:700">24h change</small></div>'+
+      '<canvas class="spark" id="mk-spark-'+s.id+'" width="240" height="46"></canvas>'+
+      '<div class="msent"><span class="badge flat" id="mk-ai-'+s.id+'">SCANNING</span><div class="confbar"><i id="mk-bar-'+s.id+'" style="width:50%"></i></div><small id="mk-conf-'+s.id+'">50%</small></div>'+
+    '</div>';
+  }).join('');
+}
+function updateMarketUI(){
+  SYMBOLS.forEach(function(s){
+    var chg=(s.price-s.open)/s.open*100;
+    var pe=$('#mk-price-'+s.id); if(!pe)return;
+    pe.textContent=fmt(s.price,s.dec);
+    var ce=$('#mk-chg-'+s.id);
+    ce.textContent=(chg>=0?'+':'')+chg.toFixed(2)+'%';
+    ce.className='badge '+(chg>=0?'up':'down');
+    drawSpark($('#mk-spark-'+s.id), s.history, chg>=0);
+    var ai=sentimentOf(s);
+    var ae=$('#mk-ai-'+s.id);
+    ae.textContent=(ai.dir==='BULLISH'?'▲ ':ai.dir==='BEARISH'?'▼ ':'◆ ')+ai.dir;
+    ae.className='badge '+(ai.dir==='BULLISH'?'up':ai.dir==='BEARISH'?'down':'flat');
+    $('#mk-bar-'+s.id).style.width=ai.conf+'%';
+    $('#mk-conf-'+s.id).textContent=ai.conf+'%';
+  });
+  /* overall AI */
+  var scores=SYMBOLS.map(function(s){ return sentimentOf(s); });
+  var mean=avg(scores.map(function(x){ return x.score; }));
+  var bulls=scores.filter(function(x){ return x.dir==='BULLISH'; }).length;
+  var bears=scores.filter(function(x){ return x.dir==='BEARISH'; }).length;
+  var verdict = mean>0.003?'BULLISH':(mean<-0.003?'BEARISH':'NEUTRAL');
+  var conf=Math.min(96, Math.round(55+Math.abs(mean)*1400));
+  var big=$('#aiBig');
+  big.className='aibadge '+verdict;
+  big.innerHTML='<span class="pulse"></span>'+verdict;
+  $('#aiSummary').textContent = verdict==='NEUTRAL'
+    ? 'Mixed tape right now — '+bulls+' bullish vs '+bears+' bearish instruments. The Sentinel is waiting for a cleaner rotation.'
+    : (verdict==='BULLISH'
+      ? 'Momentum model detects broad buying pressure — '+bulls+' of '+SYMBOLS.length+' tracked instruments printing higher-timeframe bullish structure.'
+      : 'Momentum model detects broad selling pressure — '+bears+' of '+SYMBOLS.length+' tracked instruments printing bearish structure. Protect capital first.');
+  $('#aiConfBar').style.width=conf+'%';
+  $('#aiConfTxt').textContent=conf+'% confidence';
+}
+function updateTicker(){
+  var html=SYMBOLS.map(function(s){
+    var chg=(s.price-s.open)/s.open*100;
+    var arrow=chg>=0?'<span style="color:var(--green)">▲</span>':'<span style="color:var(--red)">▼</span>';
+    return '<span class="titem"><span class="tn">'+s.name+'</span><span class="tp">'+fmt(s.price,s.dec)+'</span>'+arrow+'<span style="color:'+(chg>=0?'var(--green)':'var(--red)')+'">'+Math.abs(chg).toFixed(2)+'%</span></span>';
+  }).join('');
+  $('#tGroupA').innerHTML=html; $('#tGroupB').innerHTML=html;
+}
+
+/* ---------- routing ---------- */
+function showView(v){
+  if(v==='dashboard' && (!session || session.role!=='client')){ openAuth('login'); toast('Please sign in to access your dashboard'); return; }
+  if(v==='admin' && (!session || session.role!=='admin')){ openAuth('login'); toast('Admin credentials required'); return; }
+  $$('.view').forEach(function(x){ x.classList.remove('active'); });
+  var el=$('#view-'+v); if(el) el.classList.add('active');
+  $$('#navLinks a').forEach(function(a){ a.classList.toggle('active', a.getAttribute('data-view')===v); });
+  $('#navLinks').classList.remove('open');
+  if(v==='dashboard') renderDashboard();
+  if(v==='admin') renderAdmin('overview');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$$('#navLinks a').forEach(function(a){ a.addEventListener('click', function(){ showView(a.getAttribute('data-view')); }); });
+function toggleMenu(){ $('#navLinks').classList.toggle('open'); }
+
+/* ---------- auth ---------- */
+function openAuth(mode){ $('#authModal').classList.add('open'); switchAuth(mode); }
+function closeModal(id){ $('#'+id).classList.remove('open'); }
+function switchAuth(mode){
+  $('#tabLogin').classList.toggle('on', mode==='login');
+  $('#tabSignup').classList.toggle('on', mode==='signup');
+  $('#loginForm').style.display = mode==='login'?'block':'none';
+  $('#signupForm').style.display = mode==='signup'?'block':'none';
+}
+function loginSubmit(e){
+  e.preventDefault();
+  var em=$('#liEmail').value.trim().toLowerCase(), pw=$('#liPass').value;
+  if(em===ADMIN.email && pw===ADMIN.pass){
+    session={name:'Dr. Dama', email:em, role:'admin'};
+  }else{
+    var u=DB.get('dt_users',[]).find(function(x){ return x.email===em && x.pass===pw; });
+    if(!u){ toast('❌ Invalid credentials'); return; }
+    session={name:u.name, email:u.email, role:'client'};
+  }
+  DB.set('dt_session', session);
+  closeModal('authModal'); updateAuthUI(); toast('👋 Welcome back, '+session.name+'!');
+  showView(session.role==='admin'?'admin':'dashboard');
+}
+function signupSubmit(e){
+  e.preventDefault();
+  var name=$('#suName').value.trim(), em=$('#suEmail').value.trim().toLowerCase(), pw=$('#suPass').value;
+  var users=DB.get('dt_users',[]);
+  if(users.find(function(x){ return x.email===em; })){ toast('❌ Email already registered — sign in'); return; }
+  users.push({id:'u'+Date.now(), name:name, email:em, pass:pw, role:'client', joined:Date.now()});
+  DB.set('dt_users', users);
+  session={name:name, email:em, role:'client'};
+  DB.set('dt_session', session);
+  closeModal('authModal'); updateAuthUI(); renderCommunity();
+  toast('🎉 Account created — welcome to the family, '+name.split(' ')[0]+'!');
+  showView('dashboard');
+}
+function logout(){ session=null; DB.set('dt_session', null); updateAuthUI(); showView('home'); toast('Signed out. Stay disciplined!'); }
+function updateAuthUI(){
+  var nr=$('#navRight');
+  if(session){
+    $('#navDash').style.display = session.role==='client'?'inline-block':'none';
+    $('#navAdmin').style.display = session.role==='admin'?'inline-block':'none';
+    nr.innerHTML='<span class="badge gold">👤 '+esc(session.name)+'</span><button class="btn btn-ghost btn-sm" onclick="logout()">Logout</button>';
+  }else{
+    $('#navDash').style.display='none'; $('#navAdmin').style.display='none';
+    nr.innerHTML='<button class="btn btn-ghost btn-sm" onclick="openAuth(\'login\')">Sign In</button><button class="btn btn-gold btn-sm" onclick="openAuth(\'signup\')">Join Now</button>';
+  }
+}
+
+/* ---------- courses ---------- */
+function enrollCount(cid){
+  var en=DB.get('dt_enroll',{}), n=0;
+  Object.keys(en).forEach(function(k){ if(en[k].indexOf(cid)>-1)n++; });
+  return n;
+}
+function myEnrollments(){ if(!session)return []; var en=DB.get('dt_enroll',{}); return en[session.email]||[]; }
+function renderCourses(){
+  var courses=DB.get('dt_courses',[]);
+  var mine=myEnrollments();
+  $('#courseGrid').innerHTML = courses.map(function(c){
+    var enrolled = mine.indexOf(c.id)>-1;
+    return '<div class="card ccard">'+
+      '<div class="cband"><span class="mono goldtext">DD</span></div>'+
+      '<div class="cbody">'+
+        '<div class="cmeta"><span class="badge gold">'+esc(c.cat)+'</span><span class="badge flat">'+esc(c.level)+'</span></div>'+
+        '<h3 class="goldtext">'+esc(c.title)+'</h3>'+
+        '<p>'+esc(c.desc)+'</p>'+
+        '<div class="cmeta"><span class="badge up">🎬 '+c.lessons.length+' lessons</span><span class="badge gold">👥 '+(enrollCount(c.id)+12)+' enrolled</span></div>'+
+        '<div class="cfoot">'+
+          '<button class="btn btn-blue btn-sm" onclick="openCourse(\''+c.id+'\')">View Lessons</button>'+
+          '<button class="btn '+(enrolled?'btn-ghost':'btn-gold')+' btn-sm" onclick="enroll(\''+c.id+'\')">'+(enrolled?'✓ Enrolled':'Enrol')+'</button>'+
+        '</div>'+
+      '</div></div>';
+  }).join('') || '<p style="color:var(--muted)">No courses yet — admin can add some from the panel.</p>';
+}
+function openCourse(cid){
+  var c=DB.get('dt_courses',[]).find(function(x){ return x.id===cid; });
+  if(!c)return;
+  var html='<span class="script" style="color:var(--blue2);font-size:1.4rem">'+esc(c.cat)+' · '+esc(c.level)+'</span>'+
+    '<h2 class="goldtext" style="margin-bottom:.4rem">'+esc(c.title)+'</h2>'+
+    '<p style="color:var(--muted);font-size:.9rem;margin-bottom:1.2rem">'+esc(c.desc)+'</p>';
+  if(c.lessons.length===0){ html+='<p style="color:var(--muted)">Lessons coming soon — Dr Dama is recording! 🎬</p>'; }
+  html+=c.lessons.map(function(l,i){
+    return '<div class="lesson"><div class="ltop"><b><span class="goldtext">'+(i+1)+'.</span> '+esc(l.title)+'</b><span class="badge flat">⏱ '+esc(l.dur)+'</span></div><p>'+esc(l.content)+'</p></div>';
+  }).join('');
+  html+='<button class="btn btn-gold" style="width:100%;justify-content:center;margin-top:.6rem" onclick="enroll(\''+c.id+'\');openCourse(\''+c.id+'\')">Enrol In This Course</button>';
+  $('#courseModalBody').innerHTML=html;
+  $('#courseModal').classList.add('open');
+}
+function enroll(cid){
+  if(!session){ openAuth('signup'); toast('Create a free account to enrol'); return; }
+  if(session.role==='admin'){ toast('Admins teach — students enrol 😄'); return; }
+  var en=DB.get('dt_enroll',{});
+  var mine=en[session.email]||[];
+  if(mine.indexOf(cid)>-1){ toast('You are already enrolled ✓'); return; }
+  mine.push(cid); en[session.email]=mine; DB.set('dt_enroll', en);
+  renderCourses(); toast('🎓 Enrolled! Your journey begins now.');
+}
+
+/* ---------- leaderboard ---------- */
+function renderLeaderboard(){
+  var lb=DB.get('dt_lb',[]).slice().sort(function(a,b){ return b.growth-a.growth; });
+  $('#lbBody').innerHTML=lb.map(function(t,i){
+    var rc = i===0?'r1':i===1?'r2':i===2?'r3':'rn';
+    var medal = i===0?'👑 ':'';
+    return '<tr><td><span class="rank '+rc+'">'+(i+1)+'</span></td><td>'+medal+'<b>'+esc(t.name)+'</b></td><td style="color:var(--muted)">'+esc(t.focus)+'</td><td><span class="badge gold">🔥 '+esc(t.streak)+'</span></td><td style="text-align:right"><span class="growth">+'+t.growth.toFixed(1)+'%</span></td></tr>';
+  }).join('');
+}
+
+/* ---------- community ---------- */
+function renderCommunity(){
+  var cb=$('#composerBox');
+  if(session){
+    cb.innerHTML='<div class="card composer"><textarea id="postText" placeholder="Share a setup, a win, or a lesson with the family…"></textarea>'+
+      '<div class="crow"><span style="color:var(--muted);font-size:.8rem">Posting as <b style="color:var(--gold2)">'+esc(session.name)+'</b></span>'+
+      '<button class="btn btn-gold btn-sm" onclick="submitPost()"> Post To Community</button></div></div>';
+  }else{
+    cb.innerHTML='<div class="card composer" style="text-align:center"><p style="color:var(--muted);margin-bottom:.8rem">Sign up to join the conversation with thousands of traders.</p><button class="btn btn-gold" onclick="openAuth(\'signup\')">Join The Community</button></div>';
+  }
+  var posts=DB.get('dt_posts',[]).slice().sort(function(a,b){ return b.time-a.time; });
+  $('#postFeed').innerHTML=posts.map(function(p){
+    var liked = session && p.likedBy.indexOf(session.email)>-1;
+    var initials=p.author.split(' ').map(function(w){ return w[0]||''; }).join('').slice(0,2).toUpperCase();
+    return '<div class="card post"><div class="phead"><span class="avatar '+(p.role==='mentor'?'':'blue')+'">'+esc(initials)+'</span>'+
+      '<div class="pmeta"><b>'+esc(p.author)+' '+(p.role==='mentor'?'<span class="badge gold" style="margin-left:.3rem">MENTOR</span>':'')+'</b><span>'+timeAgo(p.time)+'</span></div></div>'+
+      '<p>'+esc(p.text)+'</p>'+
+      '<div class="pfoot"><button class="likebtn '+(liked?'liked':'')+'" onclick="likePost(\''+p.id+'\')">💛 '+p.likes+'</button>'+
+      (session&&session.role==='admin'?'<button class="btn btn-danger btn-sm" onclick="deletePost(\''+p.id+'\')">Delete</button>':'')+
+      '</div></div>';
+  }).join('') || '<p style="color:var(--muted)">No posts yet.</p>';
+}
+function submitPost(){
+  var txt=$('#postText').value.trim();
+  if(!txt){ toast('Write something first ✍️'); return; }
+  var posts=DB.get('dt_posts',[]);
+  posts.push({id:'p'+Date.now(), author:session.name, role:session.role==='admin'?'mentor':'member', time:Date.now(), text:txt, likes:0, likedBy:[]});
+  DB.set('dt_posts', posts); renderCommunity(); toast('📣 Posted to the community!');
+}
+function likePost(pid){
+  if(!session){ openAuth('login'); toast('Sign in to like posts'); return; }
+  var posts=DB.get('dt_posts',[]);
+  var p=posts.find(function(x){ return x.id===pid; }); if(!p)return;
+  var i=p.likedBy.indexOf(session.email);
+  if(i>-1){ p.likedBy.splice(i,1); p.likes=Math.max(0,p.likes-1); } else { p.likedBy.push(session.email); p.likes++; }
+  DB.set('dt_posts', posts); renderCommunity();
+}
+function deletePost(pid){
+  var posts=DB.get('dt_posts',[]).filter(function(x){ return x.id!==pid; });
+  DB.set('dt_posts', posts); renderCommunity(); renderAdmin('moderation'); toast('Post removed 🛡️');
+}
+
+/* ---------- dashboard ---------- */
+function renderDashboard(){
+  if(!session)return;
+  $('#dashTitle').textContent='Welcome, '+session.name.split(' ')[0]+' 👋';
+  var rec=DB.get('dt_mt5',[]).find(function(m){ return m.email===session.email; });
+  var mine=myEnrollments();
+  var courses=DB.get('dt_courses',[]).filter(function(c){ return mine.indexOf(c.id)>-1; });
+  var html='';
+  /* MT5 card */
+  html+='<div class="card dcard"><h3>💼 Account Management — MT5</h3>';
+  if(rec){
+    html+='<p style="color:var(--muted);font-size:.86rem;margin-bottom:.9rem">Your managed account request is on the desk.</p>'+
+      '<div class="listrow"><span>MT5 Login</span><b>'+esc(rec.login)+'</b></div>'+
+      '<div class="listrow"><span>Server</span><b>'+esc(rec.server)+'</b></div>'+
+      '<div class="listrow"><span>Strategy</span><b>'+esc(rec.mode)+'</b></div>'+
+      '<div class="listrow"><span>Risk Profile</span><b>'+esc(rec.risk)+'</b></div>'+
+      '<div class="listrow"><span>Status</span><span class="status st-'+rec.status+'">'+rec.status+'</span></div>';
+  }else{
+    html+='<p style="color:var(--muted);font-size:.86rem;margin-bottom:1rem">Submit your MT5 details and the desk will take it from there. <i>(Demo — never enter real funded passwords here.)</i></p>'+
+    '<form onsubmit="mt5Submit(event)"><div class="formgrid">'+
+      '<div class="field"><label>MT5 Login</label><input id="mtLogin" required placeholder="e.g. 50238811"></div>'+
+      '<div class="field"><label>Investor Password</label><input id="mtPass" required type="password" placeholder="••••••••"></div>'+
+      '<div class="field"><label>Server</label><select id="mtServer"><option>ICMarkets-Live08</option><option>ICMarkets-Demo</option><option>Exness-MT5Real8</option><option>Exness-MT5Trial</option><option>FTMO-Demo</option><option>MetaQuotes-Demo</option><option>Other</option></select></div>'+
+      '<div class="field"><label>Risk Profile</label><select id="mtRisk"><option>Conservative</option><option selected>Balanced</option><option>Aggressive</option></select></div>'+
+      '<div class="field" style="grid-column:1/-1"><label>Strategy Mode</label><select id="mtMode"><option selected>Growth (Compounding)</option><option>Steady Income (Monthly payouts)</option><option>Custom — discuss with Dr Dama</option></select></div>'+
+    '</div><button class="btn btn-gold" style="margin-top:1rem;width:100%;justify-content:center">🔐 Submit For Management</button></form>';
+  }
+  html+='</div>';
+  /* right column */
+  html+='<div style="display:flex;flex-direction:column;gap:1.2rem">';
+  html+='<div class="card dcard"><h3>🎓 My Courses</h3>';
+  html+= courses.length ? courses.map(function(c){ return '<div class="listrow"><span><b>'+esc(c.title)+'</b></span><button class="btn btn-blue btn-sm" onclick="openCourse(\''+c.id+'\')">Open</button></div>'; }).join('')
+        : '<p style="color:var(--muted);font-size:.86rem">You haven’t enrolled yet. <a style="color:var(--gold2);cursor:pointer" onclick="showView(\'courses\')">Browse the academy →</a></p>';
+  html+='</div>';
+  html+='<div class="card dcard"><h3>🤖 AI Desk Snapshot</h3><div id="dashAI" style="color:var(--muted);font-size:.88rem;line-height:1.7">Loading market mood…</div>'+
+        '<button class="btn btn-blue btn-sm" style="margin-top:.9rem" onclick="showView(\'markets\')">Open Full Market Desk</button></div>';
+  html+='</div>';
+  $('#dashBody').innerHTML=html;
+  setTimeout(function(){
+    var el=$('#dashAI'); if(!el)return;
+    var bulls=SYMBOLS.filter(function(s){ return sentimentOf(s).dir==='BULLISH'; }).map(function(s){ return s.name; });
+    var bears=SYMBOLS.filter(function(s){ return sentimentOf(s).dir==='BEARISH'; }).map(function(s){ return s.name; });
+    el.innerHTML='Currently <b style="color:var(--green)">bullish</b>: '+(bulls.join(', ')||'—')+'<br>Currently <b style="color:var(--red)">bearish</b>: '+(bears.join(', ')||'—');
+  },300);
+}
+function mt5Submit(e){
+  e.preventDefault();
+  var recs=DB.get('dt_mt5',[]);
+  recs.push({id:'m'+Date.now(), email:session.email, name:session.name, login:$('#mtLogin').value.trim(), server:$('#mtServer').value, mode:$('#mtMode').value, risk:$('#mtRisk').value, status:'pending', date:Date.now()});
+  DB.set('dt_mt5', recs);
+  renderDashboard(); toast('🔐 MT5 details submitted — the desk will review shortly.');
+}
+
+/* ---------- admin ---------- */
+function renderAdmin(tab){
+  if(!session||session.role!=='admin')return;
+  $$('#adminTabs button').forEach(function(b,i){
+    var tabs=['overview','courses','lessons','accounts','traders','moderation'];
+    b.classList.toggle('on', tabs[i]===tab);
+  });
+  var body=$('#adminBody'), html='';
+  if(tab==='overview'){
+    var users=DB.get('dt_users',[]), mt=DB.get('dt_mt5',[]), co=DB.get('dt_courses',[]), po=DB.get('dt_posts',[]);
+    html+='<div class="statcards">'+
+      '<div class="card scard"><b class="goldtext">'+users.length+'</b><span>Registered Clients</span></div>'+
+      '<div class="card scard"><b class="goldtext">'+mt.filter(function(m){return m.status==='pending';}).length+'</b><span>Pending MT5 Accounts</span></div>'+
+      '<div class="card scard"><b class="goldtext">'+co.length+'</b><span>Live Courses</span></div>'+
+      '<div class="card scard"><b class="goldtext">'+po.length+'</b><span>Community Posts</span></div></div>'+
+      '<h3 style="margin:1.6rem 0 .6rem" class="goldtext">Latest Members</h3>'+
+      users.slice(-5).reverse().map(function(u){ return '<div class="listrow"><span>👤 <b>'+esc(u.name)+'</b> · '+esc(u.email)+'</span><span style="color:var(--muted);font-size:.78rem">joined '+timeAgo(u.joined)+'</span></div>'; }).join('');
+  }
+  if(tab==='courses'){
+    html+='<h3 class="goldtext" style="margin-bottom:1rem">📚 Publish A New Course</h3>'+
+    '<form onsubmit="addCourse(event)"><div class="formgrid">'+
+      '<div class="field" style="grid-column:1/-1"><label>Course Title</label><input id="acTitle" required placeholder="e.g. Smart Money Concepts Deep-Dive"></div>'+
+      '<div class="field"><label>Category</label><select id="acCat"><option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>Webinar</option></select></div>'+
+      '<div class="field"><label>Level</label><select id="acLevel"><option>Level 1</option><option>Level 2</option><option>Level 3</option><option>Live Class</option></select></div>'+
+      '<div class="field" style="grid-column:1/-1"><label>Short Description</label><textarea id="acDesc" rows="3" required placeholder="What will students master in this course?"></textarea></div>'+
+    '</div><button class="btn btn-gold" style="margin-top:1rem">⚡ Publish Course</button></form>'+
+    '<h3 class="goldtext" style="margin:1.6rem 0 .6rem">Existing Courses</h3>'+
+    DB.get('dt_courses',[]).map(function(c){ return '<div class="listrow"><span><b>'+esc(c.title)+'</b> · '+c.lessons.length+' lessons</span><button class="btn btn-danger btn-sm" onclick="delCourse(\''+c.id+'\')">Remove</button></div>'; }).join('');
+  }
+  if(tab==='lessons'){
+    html+='<h3 class="goldtext" style="margin-bottom:1rem">🎬 Add A Class Lesson</h3>'+
+    '<form onsubmit="addLesson(event)"><div class="formgrid">'+
+      '<div class="field" style="grid-column:1/-1"><label>Attach To Course</label><select id="alCourse">'+DB.get('dt_courses',[]).map(function(c){ return '<option value="'+c.id+'">'+esc(c.title)+'</option>'; }).join('')+'</select></div>'+
+      '<div class="field"><label>Lesson Title</label><input id="alTitle" required placeholder="e.g. Entry Triggers & Confirmation"></div>'+
+      '<div class="field"><label>Duration</label><input id="alDur" required placeholder="e.g. 45 min"></div>'+
+      '<div class="field" style="grid-column:1/-1"><label>Lesson Summary / Notes</label><textarea id="alContent" rows="4" required placeholder="What does this class cover?"></textarea></div>'+
+    '</div><button class="btn btn-gold" style="margin-top:1rem">🎬 Add Lesson</button></form>';
+  }
+  if(tab==='accounts'){
+    var recs=DB.get('dt_mt5',[]);
+    html+='<h3 class="goldtext" style="margin-bottom:1rem">💼 Client MT5 Submissions</h3>';
+    html+= recs.length ? recs.map(function(m){
+      return '<div class="listrow"><span>👤 <b>'+esc(m.name)+'</b> · login <b>'+esc(m.login)+'</b> · '+esc(m.server)+' · '+esc(m.risk)+'</span>'+
+      '<span style="display:flex;gap:.5rem;align-items:center"><span class="status st-'+m.status+'">'+m.status+'</span>'+
+      (m.status==='pending'?'<button class="btn btn-gold btn-sm" onclick="setMt5(\''+m.id+'\',\'managing\')">Approve</button><button class="btn btn-danger btn-sm" onclick="setMt5(\''+m.id+'\',\'rejected\')">Reject</button>':'')+
+      '</span></div>';
+    }).join('') : '<p style="color:var(--muted)">No MT5 submissions yet.</p>';
+  }
+  if(tab==='traders'){
+    html+='<h3 class="goldtext" style="margin-bottom:1rem">🏆 Update Leaderboard</h3>'+
+    '<form onsubmit="addTrader(event)"><div class="formgrid">'+
+      '<div class="field"><label>Trader Name</label><input id="atName" required placeholder="e.g. Naledi M."></div>'+
+      '<div class="field"><label>Growth % (month)</label><input id="atGrowth" required type="number" step="0.1" placeholder="e.g. 12.5"></div>'+
+      '<div class="field"><label>Focus</label><input id="atFocus" required placeholder="e.g. XAUUSD"></div>'+
+      '<div class="field"><label>Streak</label><input id="atStreak" required placeholder="e.g. 4 wks"></div>'+
+    '</div><button class="btn btn-gold" style="margin-top:1rem">Add / Update Trader</button></form>'+
+    '<h3 class="goldtext" style="margin:1.4rem 0 .6rem">Current Board</h3>'+
+    DB.get('dt_lb',[]).map(function(t){ return '<div class="listrow"><span><b>'+esc(t.name)+'</b> · +'+t.growth.toFixed(1)+'%</span><button class="btn btn-danger btn-sm" onclick="delTrader(\''+t.id+'\')">Remove</button></div>'; }).join('');
+  }
+  if(tab==='moderation'){
+    html+='<h3 class="goldtext" style="margin-bottom:1rem">🛡️ Community Moderation</h3>'+
+    DB.get('dt_posts',[]).slice().sort(function(a,b){return b.time-a.time;}).map(function(p){
+      return '<div class="listrow"><span><b>'+esc(p.author)+'</b>: '+esc(p.text.slice(0,70))+'… · 💛 '+p.likes+'</span><button class="btn btn-danger btn-sm" onclick="deletePost(\''+p.id+'\')">Delete</button></div>';
+    }).join('') || '<p style="color:var(--muted)">No posts.</p>';
+  }
+  body.innerHTML=html;
+}
+function addCourse(e){
+  e.preventDefault();
+  var courses=DB.get('dt_courses',[]);
+  courses.push({id:'c'+Date.now(), title:$('#acTitle').value.trim(), cat:$('#acCat').value, level:$('#acLevel').value, desc:$('#acDesc').value.trim(), lessons:[]});
+  DB.set('dt_courses', courses); renderCourses(); renderAdmin('courses'); toast('📚 Course published to the academy!');
+}
+function delCourse(cid){
+  DB.set('dt_courses', DB.get('dt_courses',[]).filter(function(c){ return c.id!==cid; }));
+  renderCourses(); renderAdmin('courses'); toast('Course removed');
+}
+function addLesson(e){
+  e.preventDefault();
+  var courses=DB.get('dt_courses',[]);
+  var c=courses.find(function(x){ return x.id===$('#alCourse').value; }); if(!c)return;
+  c.lessons.push({title:$('#alTitle').value.trim(), dur:$('#alDur').value.trim(), content:$('#alContent').value.trim()});
+  DB.set('dt_courses', courses); renderCourses(); renderAdmin('lessons'); toast('🎬 Lesson added — students can see it now!');
+}
+function setMt5(mid,status){
+  var recs=DB.get('dt_mt5',[]); var r=recs.find(function(x){ return x.id===mid; });
+  if(r){ r.status=status; DB.set('dt_mt5', recs); renderAdmin('accounts'); toast(status==='managing'?'✅ Account approved for management':'Account rejected'); }
+}
+function addTrader(e){
+  e.preventDefault();
+  var lb=DB.get('dt_lb',[]);
+  lb.push({id:'t'+Date.now(), name:$('#atName').value.trim(), growth:parseFloat($('#atGrowth').value)||0, focus:$('#atFocus').value.trim(), streak:$('#atStreak').value.trim()});
+  DB.set('dt_lb', lb); renderLeaderboard(); renderAdmin('traders'); toast('🏆 Leaderboard updated');
+}
+function delTrader(tid){
+  DB.set('dt_lb', DB.get('dt_lb',[]).filter(function(t){ return t.id!==tid; }));
+  renderLeaderboard(); renderAdmin('traders');
+}
+
+/* ---------- boot ---------- */
+buildMarketCards();
+updateAuthUI();
+renderCourses();
+renderLeaderboard();
+renderCommunity();
+updateMarketUI();
+updateTicker();
+setInterval(tickSim, 1500);
+setInterval(fetchLive, 12000);
+fetchLive();
+</script>
+</body>
+</html>
